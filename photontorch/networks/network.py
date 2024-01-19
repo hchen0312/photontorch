@@ -257,7 +257,7 @@ class Network(Component):
 
         def is_int(s):
             try:
-                int(s)
+                int(s.replace("@",""))
                 return True
             except ValueError:
                 return False
@@ -274,6 +274,7 @@ class Network(Component):
                 if not is_int(comp)
             ]
         )
+
         return used_components.keys()
 
     def _set_buffers(self):
